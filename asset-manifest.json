@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/techAssesment/static/css/main.4a74784a.css",
+    "main.js": "/techAssesment/static/js/main.5024e8c1.js",
+    "index.html": "/techAssesment/index.html",
+    "main.4a74784a.css.map": "/techAssesment/static/css/main.4a74784a.css.map",
+    "main.5024e8c1.js.map": "/techAssesment/static/js/main.5024e8c1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a74784a.css",
+    "static/js/main.5024e8c1.js"
+  ]
+}
