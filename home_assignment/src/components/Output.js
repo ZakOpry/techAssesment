@@ -68,11 +68,11 @@ export default function Output() {
           <></>
         )}
       </div>
-      {/* <div className="badResultsMainDiv"> */}
+
       {badResults ? (
         <div className="badResultsHeaderDiv">
           <h2 className="badResultsHeader">
-            The following URLs have responded with status code 404
+            The Following URLs Have Responded With Status Code 404
           </h2>
         </div>
       ) : (
@@ -81,7 +81,7 @@ export default function Output() {
 
       {badResults &&
         badResults.map((result) => <BadRequests results={result} />)}
-      {/* </div> */}
+
       {dates && <Dates dates={dates} dateTypes={dateTypes} />}
 
       {repoCounter ? <RepoCounter repoCounter={repoCounter} /> : <></>}

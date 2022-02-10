@@ -1,0 +1,16 @@
+.repoDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.repoDiv h2 {
+  font-size: 2.3rem;
+}
+
+.repoDiv p {
+  font-size: 1.1rem;
+}
