@@ -37,10 +37,10 @@ export const getData = async (
   }
   setDates(compareDates(JsonData.created_at, JsonData.updated_at));
 
-  //turning the object into an array
+  //turning the object into an array to allow for sorting by url parameter
   const jsonArray = Object.entries(JsonData);
   let urlList = [];
-  //looping through the array and adding any value that includes the URL to the new list
+  //looping through the array and adding any value that includes the URL to the new array
   for (let x = 0; x < jsonArray.length; x++) {
     for (let j = 1; j < jsonArray[x].length; j++) {
       if (
@@ -62,13 +62,12 @@ export const getData = async (
     if (subData.status === 200) {
       goodUrls.push(subData.url);
       let subDataJson = await subData.json();
-      //   console.log(subDataJson);
       finalListOfObjects.push(subDataJson);
     } else if (subData.status === 404) {
       badUrls.push(subData.url);
     }
   }
-  console.log(finalListOfObjects);
+
   if (badUrls.length > 0) {
     setBadResults(badUrls);
   }
@@ -79,6 +78,7 @@ export const getData = async (
   if (finalListOfObjects.length > 0) {
     setResults(finalListOfObjects);
   }
+  //for comparing repo count number to number of returned arrays in repo url
   const publicRepoCount = JsonData.public_repos;
   const repoCount = finalListOfObjects[1].length;
   if (repoCount === publicRepoCount) {
@@ -88,4 +88,23 @@ export const getData = async (
     setRepoCounter(`Public repo count of ${repoCount} does not match with the number of repo arrays returned from
     the repos_url`);
   }
+};
+
+//function to clear data
+export const clearData = (
+  setResults,
+  setBadResults,
+  setGoodUrls,
+  setErrorMessage,
+  setDates,
+  setDateTypes,
+  setRepoCounter
+) => {
+  setResults("");
+  setBadResults("");
+  setGoodUrls("");
+  setErrorMessage("");
+  setDates("");
+  setDateTypes("");
+  setRepoCounter("");
 };

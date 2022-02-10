@@ -1,5 +1,5 @@
 import React from "react";
-import { getData } from "../functions/generalFunctions";
+import { getData, clearData } from "../functions/generalFunctions";
 import { useState } from "react";
 import BadRequests from "./BadRequests";
 import GoodRequests from "./GoodRequests";
@@ -32,6 +32,21 @@ export default function Output() {
         }
       >
         click for data
+      </button>
+      <button
+        onClick={() =>
+          clearData(
+            setResults,
+            setBadResults,
+            setGoodUrls,
+            setErrorMessage,
+            setDates,
+            setDateTypes,
+            setRepoCounter
+          )
+        }
+      >
+        clear data
       </button>
       {errorMessage ? (
         <h1>ERROR: YOU HAVE EXCEEDED YOUR MAX REQUEST LIMIT</h1>
