@@ -1,8 +1,41 @@
-export const getData = async (url, setResults) => {
+const compareDates = (date1, date2) => {
+  let dateOne = new Date(date1);
+  let dateTwo = new Date(date2);
+  if (dateOne < dateTwo) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export const getData = async (
+  url,
+  setResults,
+  setBadResults,
+  setGoodUrls,
+  setErrorMessage,
+  setDates,
+  setDateTypes,
+  setRepoCounter
+) => {
   // initial top level fetch
 
   const data = await fetch(url);
+  if (data.status != 200) {
+    setErrorMessage(true);
+  } else {
+    setErrorMessage(false);
+  }
+  //comparing times
   const JsonData = await data.json();
+  const dateObject = {
+    createdAt: JsonData.created_at,
+    updatedAt: JsonData.updated_at,
+  };
+  if (dateObject) {
+    setDateTypes(dateObject);
+  }
+  setDates(compareDates(JsonData.created_at, JsonData.updated_at));
 
   //turning the object into an array
   const jsonArray = Object.entries(JsonData);
@@ -20,12 +53,14 @@ export const getData = async (url, setResults) => {
       }
     }
   }
-  //   console.log(urlList);
+  // fetching the sub urls
+  let goodUrls = [];
   let badUrls = [];
   let finalListOfObjects = [];
   for (let x = 0; x < urlList.length; x++) {
     let subData = await fetch(urlList[x]);
     if (subData.status === 200) {
+      goodUrls.push(subData.url);
       let subDataJson = await subData.json();
       //   console.log(subDataJson);
       finalListOfObjects.push(subDataJson);
@@ -33,7 +68,24 @@ export const getData = async (url, setResults) => {
       badUrls.push(subData.url);
     }
   }
+  console.log(finalListOfObjects);
+  if (badUrls.length > 0) {
+    setBadResults(badUrls);
+  }
+  if (goodUrls.length > 0) {
+    setGoodUrls(goodUrls);
+  }
 
-  //   setBadResults(badUrls);
-  setResults(finalListOfObjects);
+  if (finalListOfObjects.length > 0) {
+    setResults(finalListOfObjects);
+  }
+  const publicRepoCount = JsonData.public_repos;
+  const repoCount = finalListOfObjects[1].length;
+  if (repoCount === publicRepoCount) {
+    setRepoCounter(`Public repo count of ${repoCount} matches with the number of repo arrays returned from
+    the repos_url `);
+  } else {
+    setRepoCounter(`Public repo count of ${repoCount} does not match with the number of repo arrays returned from
+    the repos_url`);
+  }
 };
