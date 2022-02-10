@@ -1,5 +1,5 @@
 .mainButtonDiv {
-  width: 100%;
+  width: 100vw;
   background-color: rgb(68, 144, 215);
   height: auto;
   display: flex;
@@ -47,7 +47,7 @@
 }
 
 .goodUrlsMainDiv {
-  width: 100%;
+  width: 100vw;
   background-color: rgb(53, 185, 155);
   margin: 0;
   max-height: 500px;
@@ -60,10 +60,11 @@
 
 .badResultsHeaderDiv {
   background-color: rgb(255, 155, 41);
-  height: 100px;
+  min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
 }
 
 .badResultsHeader {

@@ -1,5 +1,5 @@
 .mainDatesDiv {
-  width: 100%;
+  width: 100vw;
   background-color: rgb(68, 144, 215);
   display: flex;
   flex-direction: column;

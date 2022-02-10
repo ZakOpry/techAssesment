@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   background-color: rgb(255, 155, 41);
+  width: 100vw;
 }
 
 .badUrlDivs p {
