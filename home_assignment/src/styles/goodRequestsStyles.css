@@ -1,0 +1,38 @@
+.header {
+  font-size: 2.3rem;
+  font-family: "Roboto Condensed", sans-serif;
+  margin-top: 20px;
+  color: white;
+}
+.subDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subDiv p {
+  font-size: 17px;
+  margin-left: 10px;
+}
+.secondUrlIdDiv {
+  height: auto;
+  /* background-color: red; */
+  width: 22%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+
+.thirdUrlIdDiv {
+  height: auto;
+  /* background-color: red; */
+  width: 22%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}

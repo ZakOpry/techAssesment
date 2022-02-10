@@ -1,0 +1,71 @@
+.mainButtonDiv {
+  width: 100%;
+  background-color: rgb(68, 144, 215);
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonDivHeader {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+  font-size: 3.5rem;
+}
+
+.actualButtonsDiv {
+  /* background-color: red; */
+  margin-top: 30px;
+  width: 50%;
+}
+
+.getDataButton {
+  height: 50px;
+  background-color: transparent;
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+  border: solid white 3px;
+  border-radius: 5px;
+  width: 145px;
+  cursor: grab;
+}
+
+.clearDataButton {
+  height: 50px;
+  background-color: transparent;
+  margin-left: 10px;
+  color: white;
+  font-size: 20px;
+  border: solid white 3px;
+  width: 145px;
+  cursor: grab;
+  border-radius: 5px;
+}
+
+.goodUrlsMainDiv {
+  width: 100%;
+  background-color: rgb(53, 185, 155);
+  margin: 0;
+  max-height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.badResultsHeaderDiv {
+  background-color: rgb(255, 155, 41);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badResultsHeader {
+  font-family: "Roboto Condensed", sans-serif;
+  color: white;
+}

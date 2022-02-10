@@ -1,0 +1,26 @@
+.headerDiv {
+  width: 100%;
+  background-color: rgb(55, 61, 69);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerTitle {
+  margin: 0;
+  color: rgb(244, 131, 32);
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 40px;
+}
+.town {
+  color: rgb(60, 129, 195);
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 40px;
+}
+.apiData {
+  margin-left: 15px;
+  color: rgb(255, 255, 255);
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 40px;
+}
